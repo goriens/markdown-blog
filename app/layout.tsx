@@ -4,6 +4,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/nav/Navbar";
+import SessionProvider from "@/components/session-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -45,7 +47,9 @@ export default function RootLayout({
             <Navbar />
             {children}
           </main>
+          <Toaster />
         </ThemeProvider>
+        <SessionProvider />
       </body>
     </html>
   );
